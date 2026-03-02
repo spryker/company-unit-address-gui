@@ -29,11 +29,6 @@ class CompanyUnitAddressForm extends AbstractType
      */
     public const OPTION_COUNTRY_CHOICES = 'country_choices';
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setRequired(static::OPTION_COUNTRY_CHOICES);
@@ -245,9 +240,6 @@ class CompanyUnitAddressForm extends AbstractType
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getBlockPrefix(): string
     {
         return 'company_unit_address';

@@ -38,11 +38,6 @@ class CompanyBusinessUnitAddressChoiceFormType extends AbstractType
         $this->addLabelSelectField($builder, $options);
     }
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         parent::configureOptions($resolver);
@@ -72,11 +67,6 @@ class CompanyBusinessUnitAddressChoiceFormType extends AbstractType
         $this->addModelTransformer($builder);
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormBuilderInterface $builder
-     *
-     * @return void
-     */
     protected function addModelTransformer(FormBuilderInterface $builder): void
     {
         $builder->get(CompanyBusinessUnitTransfer::ADDRESS_COLLECTION)->addModelTransformer(

@@ -24,9 +24,6 @@ class CompanyUnitAddressGuiToCountryFacadeBridge implements CompanyUnitAddressGu
         $this->countryFacade = $countryFacade;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\CountryCollectionTransfer
-     */
     public function getAvailableCountries(): CountryCollectionTransfer
     {
         return $this->countryFacade->getAvailableCountries();

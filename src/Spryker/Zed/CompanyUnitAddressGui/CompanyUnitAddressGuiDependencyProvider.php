@@ -56,11 +56,6 @@ class CompanyUnitAddressGuiDependencyProvider extends AbstractBundleDependencyPr
      */
     public const PROPEL_QUERY_COMPANY_UNIT_ADDRESS = 'PROPEL_QUERY_COMPANY_UNIT_ADDRESS';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideCommunicationLayerDependencies(Container $container): Container
     {
         $container = parent::provideCommunicationLayerDependencies($container);
@@ -76,11 +71,6 @@ class CompanyUnitAddressGuiDependencyProvider extends AbstractBundleDependencyPr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCompanyUnitAddressFacade(Container $container): Container
     {
         $container->set(static::FACADE_COMPANY_UNIT_ADDRESS, function (Container $container) {
@@ -92,11 +82,6 @@ class CompanyUnitAddressGuiDependencyProvider extends AbstractBundleDependencyPr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCompanyUnitAddressPropelQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_COMPANY_UNIT_ADDRESS, $container->factory(function () {
@@ -106,11 +91,6 @@ class CompanyUnitAddressGuiDependencyProvider extends AbstractBundleDependencyPr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCompanyFacade(Container $container): Container
     {
         $container->set(static::FACADE_COMPANY, function (Container $container) {
@@ -122,11 +102,6 @@ class CompanyUnitAddressGuiDependencyProvider extends AbstractBundleDependencyPr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCountryFacade(Container $container): Container
     {
         $container->set(static::FACADE_COUNTRY, function (Container $container) {
@@ -138,11 +113,6 @@ class CompanyUnitAddressGuiDependencyProvider extends AbstractBundleDependencyPr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCompanyUnitAddressFormPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_COMPANY_UNIT_ADDRESS_FORM, function () {
@@ -160,11 +130,6 @@ class CompanyUnitAddressGuiDependencyProvider extends AbstractBundleDependencyPr
         return [];
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCompanyUnitAddressTableConfigExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_COMPANY_UNIT_ADDRESS_TABLE_CONFIG_EXPANDER, function () {
@@ -182,11 +147,6 @@ class CompanyUnitAddressGuiDependencyProvider extends AbstractBundleDependencyPr
         return [];
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCompanyUnitAddressTableHeaderExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_COMPANY_UNIT_ADDRESS_TABLE_HEADER_EXPANDER, function () {
@@ -204,11 +164,6 @@ class CompanyUnitAddressGuiDependencyProvider extends AbstractBundleDependencyPr
         return [];
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCompanyUnitAddressTableDataExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_COMPANY_UNIT_ADDRESS_TABLE_DATA_EXPANDER, function () {

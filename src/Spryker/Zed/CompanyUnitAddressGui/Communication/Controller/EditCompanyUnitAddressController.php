@@ -87,11 +87,6 @@ class EditCompanyUnitAddressController extends AbstractController
         ]);
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormInterface $companyUnitAddressForm
-     *
-     * @return void
-     */
     protected function updateCompanyUnitAddress(FormInterface $companyUnitAddressForm): void
     {
         if (!$companyUnitAddressForm->isValid()) {

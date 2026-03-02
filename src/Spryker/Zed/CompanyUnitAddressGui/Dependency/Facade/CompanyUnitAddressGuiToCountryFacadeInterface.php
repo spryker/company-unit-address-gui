@@ -11,8 +11,5 @@ use Generated\Shared\Transfer\CountryCollectionTransfer;
 
 interface CompanyUnitAddressGuiToCountryFacadeInterface
 {
-    /**
-     * @return \Generated\Shared\Transfer\CountryCollectionTransfer
-     */
     public function getAvailableCountries(): CountryCollectionTransfer;
 }

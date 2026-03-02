@@ -23,9 +23,6 @@ class CompanyBusinessUnitAddressFormDataProvider
      */
     protected $companyUnitAddressFacade;
 
-    /**
-     * @param \Spryker\Zed\CompanyUnitAddressGui\Dependency\Facade\CompanyUnitAddressGuiToCompanyUnitAddressFacadeInterface $companyUnitAddressFacade
-     */
     public function __construct(
         CompanyUnitAddressGuiToCompanyUnitAddressFacadeInterface $companyUnitAddressFacade
     ) {
@@ -44,11 +41,6 @@ class CompanyBusinessUnitAddressFormDataProvider
         ];
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyBusinessUnitTransfer $companyBusinessUnitTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyBusinessUnitTransfer
-     */
     public function getData(CompanyBusinessUnitTransfer $companyBusinessUnitTransfer): CompanyBusinessUnitTransfer
     {
         if (!$companyBusinessUnitTransfer->getIdCompanyBusinessUnit()) {
@@ -86,12 +78,6 @@ class CompanyBusinessUnitAddressFormDataProvider
         return $result;
     }
 
-    /**
-     * @param int|null $idCompany
-     * @param int|null $idCompanyBusinessUnit
-     *
-     * @return \Generated\Shared\Transfer\CompanyUnitAddressCriteriaFilterTransfer
-     */
     protected function prepareCompanyUnitAddressCriteriaFilterTransfer(
         ?int $idCompany = null,
         ?int $idCompanyBusinessUnit = null
@@ -110,9 +96,6 @@ class CompanyBusinessUnitAddressFormDataProvider
         return $companyUnitAddressCriteriaFilter;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\CompanyUnitAddressCollectionTransfer
-     */
     protected function getEmptyAddressCollection(): CompanyUnitAddressCollectionTransfer
     {
         $labelCollection = new CompanyUnitAddressCollectionTransfer();
@@ -121,11 +104,6 @@ class CompanyBusinessUnitAddressFormDataProvider
         return $labelCollection;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUnitAddressTransfer $companyUnitAddressTransfer
-     *
-     * @return string
-     */
     protected function getAddressValue(CompanyUnitAddressTransfer $companyUnitAddressTransfer): string
     {
         return sprintf(

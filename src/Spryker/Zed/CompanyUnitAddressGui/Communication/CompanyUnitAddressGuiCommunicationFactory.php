@@ -22,9 +22,6 @@ use Symfony\Component\Form\FormInterface;
 
 class CompanyUnitAddressGuiCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Spryker\Zed\CompanyUnitAddressGui\Communication\Table\CompanyUnitAddressTable
-     */
     public function createAddressTable(): CompanyUnitAddressTable
     {
         return new CompanyUnitAddressTable(
@@ -35,9 +32,6 @@ class CompanyUnitAddressGuiCommunicationFactory extends AbstractCommunicationFac
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CompanyUnitAddressGui\Dependency\Facade\CompanyUnitAddressGuiToCompanyUnitAddressFacadeInterface
-     */
     public function getCompanyUnitAddressFacade(): CompanyUnitAddressGuiToCompanyUnitAddressFacadeInterface
     {
         return $this->getProvidedDependency(
@@ -45,9 +39,6 @@ class CompanyUnitAddressGuiCommunicationFactory extends AbstractCommunicationFac
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CompanyUnitAddressGui\Dependency\Facade\CompanyUnitAddressGuiToCompanyFacadeInterface
-     */
     public function getCompanyFacade(): CompanyUnitAddressGuiToCompanyFacadeInterface
     {
         return $this->getProvidedDependency(
@@ -55,9 +46,6 @@ class CompanyUnitAddressGuiCommunicationFactory extends AbstractCommunicationFac
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CompanyUnitAddressGui\Dependency\Facade\CompanyUnitAddressGuiToCountryFacadeInterface
-     */
     public function getCountryFacade(): CompanyUnitAddressGuiToCountryFacadeInterface
     {
         return $this->getProvidedDependency(
@@ -65,11 +53,6 @@ class CompanyUnitAddressGuiCommunicationFactory extends AbstractCommunicationFac
         );
     }
 
-    /**
-     * @param int|null $idCompanyUnitAddress
-     *
-     * @return \Symfony\Component\Form\FormInterface
-     */
     public function createCompanyUnitAddressForm(?int $idCompanyUnitAddress = null): FormInterface
     {
         $companyUnitAddressDataProvider = $this->createCompanyUnitAddressDataProvider();
@@ -113,9 +96,6 @@ class CompanyUnitAddressGuiCommunicationFactory extends AbstractCommunicationFac
         return $this->getProvidedDependency(CompanyUnitAddressGuiDependencyProvider::PLUGINS_COMPANY_UNIT_ADDRESS_TABLE_DATA_EXPANDER);
     }
 
-    /**
-     * @return \Spryker\Zed\CompanyUnitAddressGui\Communication\Form\DataProvider\CompanyUnitAddressFormDataProvider
-     */
     public function createCompanyUnitAddressDataProvider(): CompanyUnitAddressFormDataProvider
     {
         return new CompanyUnitAddressFormDataProvider(
@@ -125,9 +105,6 @@ class CompanyUnitAddressGuiCommunicationFactory extends AbstractCommunicationFac
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CompanyUnitAddressGui\Communication\Form\DataProvider\CompanyBusinessUnitAddressFormDataProvider
-     */
     public function createCompanyBusinessUnitAddressChoiceFormDataProvider(): CompanyBusinessUnitAddressFormDataProvider
     {
         return new CompanyBusinessUnitAddressFormDataProvider(
@@ -135,17 +112,11 @@ class CompanyUnitAddressGuiCommunicationFactory extends AbstractCommunicationFac
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CompanyUnitAddressGui\Communication\Form\CompanyBusinessUnitAddressChoiceFormType
-     */
     public function createCompanyBusinessUnitAddressChoiceFormType(): CompanyBusinessUnitAddressChoiceFormType
     {
         return new CompanyBusinessUnitAddressChoiceFormType();
     }
 
-    /**
-     * @return \Orm\Zed\CompanyUnitAddress\Persistence\SpyCompanyUnitAddressQuery
-     */
     public function getCompanyUnitAddressPropelQuery(): SpyCompanyUnitAddressQuery
     {
         return $this->getProvidedDependency(CompanyUnitAddressGuiDependencyProvider::PROPEL_QUERY_COMPANY_UNIT_ADDRESS);

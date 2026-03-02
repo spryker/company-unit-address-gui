@@ -30,11 +30,6 @@ class CompanyUnitAddressFormDataProvider
      */
     protected $countryFacade;
 
-    /**
-     * @param \Spryker\Zed\CompanyUnitAddressGui\Dependency\Facade\CompanyUnitAddressGuiToCompanyUnitAddressFacadeInterface $companyUnitAddressFacade
-     * @param \Spryker\Zed\CompanyUnitAddressGui\Dependency\Facade\CompanyUnitAddressGuiToCompanyFacadeInterface $companyFacade
-     * @param \Spryker\Zed\CompanyUnitAddressGui\Dependency\Facade\CompanyUnitAddressGuiToCountryFacadeInterface $countryFacade
-     */
     public function __construct(
         CompanyUnitAddressGuiToCompanyUnitAddressFacadeInterface $companyUnitAddressFacade,
         CompanyUnitAddressGuiToCompanyFacadeInterface $companyFacade,

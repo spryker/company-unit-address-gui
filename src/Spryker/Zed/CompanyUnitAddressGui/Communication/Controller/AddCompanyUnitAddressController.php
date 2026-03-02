@@ -61,11 +61,6 @@ class AddCompanyUnitAddressController extends AbstractController
         ]);
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormInterface $companyUnitAddressForm
-     *
-     * @return void
-     */
     protected function createCompanyUnitAddress(FormInterface $companyUnitAddressForm): void
     {
         if (!$companyUnitAddressForm->isValid()) {

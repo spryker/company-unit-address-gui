@@ -100,11 +100,6 @@ class CompanyUnitAddressTable extends AbstractTable
         $this->companyUnitAddressTableDataExpanderPlugins = $companyTableDataExpanderPlugins;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function configure(TableConfiguration $config): TableConfiguration
     {
         $config = $this->setHeader($config);
@@ -135,11 +130,6 @@ class CompanyUnitAddressTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return array
-     */
     protected function prepareData(TableConfiguration $config): array
     {
         $this->companyUnitAddressQuery->leftJoinWithCompany()
@@ -156,11 +146,6 @@ class CompanyUnitAddressTable extends AbstractTable
         return $results;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function setHeader(TableConfiguration $config): TableConfiguration
     {
         $baseData = [
@@ -183,11 +168,6 @@ class CompanyUnitAddressTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @param \Orm\Zed\CompanyUnitAddress\Persistence\SpyCompanyUnitAddress $companyUnitAddressEntity
-     *
-     * @return array
-     */
     protected function prepareRowData(SpyCompanyUnitAddress $companyUnitAddressEntity): array
     {
         $baseData = [
@@ -209,11 +189,6 @@ class CompanyUnitAddressTable extends AbstractTable
         return $baseData + $externalData + $actions;
     }
 
-    /**
-     * @param \Orm\Zed\CompanyUnitAddress\Persistence\SpyCompanyUnitAddress $companyUnitAddressEntity
-     *
-     * @return string
-     */
     protected function buildLinks(SpyCompanyUnitAddress $companyUnitAddressEntity): string
     {
         $buttons = [];
@@ -228,11 +203,6 @@ class CompanyUnitAddressTable extends AbstractTable
         return implode(' ', $buttons);
     }
 
-    /**
-     * @param \Orm\Zed\CompanyUnitAddress\Persistence\SpyCompanyUnitAddress $companyUnitAddressEntity
-     *
-     * @return string
-     */
     protected function getCountryName(SpyCompanyUnitAddress $companyUnitAddressEntity): string
     {
         if ($companyUnitAddressEntity->getFkCountry()) {
@@ -242,11 +212,6 @@ class CompanyUnitAddressTable extends AbstractTable
         return '';
     }
 
-    /**
-     * @param \Orm\Zed\CompanyUnitAddress\Persistence\SpyCompanyUnitAddress $companyUnitAddressEntity
-     *
-     * @return string
-     */
     protected function getCompanyName(SpyCompanyUnitAddress $companyUnitAddressEntity): string
     {
         if ($companyUnitAddressEntity->getFkCompany()) {
@@ -256,11 +221,6 @@ class CompanyUnitAddressTable extends AbstractTable
         return '';
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function executeTableConfigExpanderPlugins(TableConfiguration $config): TableConfiguration
     {
         foreach ($this->companyUnitAddressTableConfigExpanderPlugins as $companyTableConfigExpanderPlugin) {
@@ -270,9 +230,6 @@ class CompanyUnitAddressTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @return array
-     */
     protected function executeTableHeaderExpanderPlugins(): array
     {
         $expandedData = [];
@@ -283,11 +240,6 @@ class CompanyUnitAddressTable extends AbstractTable
         return $expandedData;
     }
 
-    /**
-     * @param array $item
-     *
-     * @return array
-     */
     protected function executeTableDataExpanderPlugins(array $item): array
     {
         $expandedData = [];

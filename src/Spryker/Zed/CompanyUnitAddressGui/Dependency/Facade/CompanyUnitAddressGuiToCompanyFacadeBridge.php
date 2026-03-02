@@ -24,9 +24,6 @@ class CompanyUnitAddressGuiToCompanyFacadeBridge implements CompanyUnitAddressGu
         $this->companyFacade = $companyFacade;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\CompanyCollectionTransfer
-     */
     public function getCompanies(): CompanyCollectionTransfer
     {
         return $this->companyFacade->getCompanies();
