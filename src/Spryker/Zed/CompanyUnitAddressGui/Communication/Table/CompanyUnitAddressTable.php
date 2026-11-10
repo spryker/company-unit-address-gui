@@ -105,7 +105,6 @@ class CompanyUnitAddressTable extends AbstractTable
         $config = $this->setHeader($config);
 
         $config->addRawColumn(static::COL_ACTIONS);
-        $config->addRawColumn(static::COL_COUNTRY_RELATION);
 
         $config->setSortable([
             static::COL_ID_COMPANY_UNIT_ADDRESS,
