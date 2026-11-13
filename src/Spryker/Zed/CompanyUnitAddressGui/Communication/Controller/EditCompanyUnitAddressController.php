@@ -81,6 +81,12 @@ class EditCompanyUnitAddressController extends AbstractController
                     ->setIdCompanyUnitAddress($idCompanyUnitAddress),
             );
 
+        if (!$companyUnitAddressTransfer->getIdCompanyUnitAddress()) {
+            $this->addErrorMessage(static::MESSAGE_COMPANY_UNIT_ADDRESS_NOT_FOUND);
+
+            return $this->redirectResponse(static::COMPANY_UNIT_ADDRESS_LIST_URL);
+        }
+
         return $this->viewResponse([
             'companyUnitAddressForm' => $companyUnitAddressForm->createView(),
             'companyUnitAddress' => $companyUnitAddressTransfer,
